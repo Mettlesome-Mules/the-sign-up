@@ -1,0 +1,19 @@
+{
+  "name": "the-sign-up",
+  "version": "1.0.0",
+  "description": "A sign up interface",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mettlesome-mules/the-sign-up.git"
+  },
+  "author": "mettlesome-mules",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mettlesome-mules/the-sign-up/issues"
+  },
+  "homepage": "https://github.com/mettlesome-mules/the-sign-up"
+}
