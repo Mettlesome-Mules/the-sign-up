@@ -20,21 +20,35 @@ var path = {
   DEST: 'dist'
 };
 
+//********************************************//
+// Used to transform/transpile the JS paths 
+// from js to jsx
+//********************************************//
 gulp.task('transform', function(){
   gulp.src(path.JS)
     .pipe(react())
     .pipe(gulp.dest(path.DEST_SRC));
 });
-
+//********************************************//
+// Used to copy the path.HTML to its path.DEST
+//********************************************//
 gulp.task('copy', function(){
   gulp.src(path.HTML)
     .pipe(gulp.dest(path.DEST));
 });
-
+//********************************************//
+// Used to watch the array path.ALL and the files
+// listed in that array. On any changes it will
+// run the args passed in the list
+//********************************************//
 gulp.task('watch', function(){
   gulp.watch(path.ALL, ['transform', 'copy']);
 });
-
+//********************************************//
+// gulp build will given the path.JS ['path1', path2]
+// concat the files in that folder, uglify them, and
+// place those files in the path.DEST_BUILD
+//********************************************//
 gulp.task('build', function(){
   gulp.src(path.JS)
     .pipe(react())
@@ -42,7 +56,9 @@ gulp.task('build', function(){
     .pipe(uglify(path.MINIFIED_OUT))
     .pipe(gulp.dest(path.DEST_BUILD));
 });
-
+//********************************************//
+//
+//********************************************//
 gulp.task('replaceHTML', function(){
   gulp.src(path.HTML)
     .pipe(htmlreplace({
@@ -72,7 +88,9 @@ gulp.task('mocha', function () {
         .pipe(mocha({reporter: 'nyan'}));
 });
 
-
+//********************************************//
+//
+//********************************************//
 gulp.task('default', ['watch']);
 
 gulp.task('production', ['replaceHTML', 'build']);
