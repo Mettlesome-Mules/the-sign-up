@@ -37,6 +37,7 @@
     "passport": "^0.2.2",
     "react": "^0.13.3",
     "react-router": "^0.13.3",
+    "replace-ext": "0.0.1",
     "sequelize": "^3.1.1",
     "sqlite3": "^3.0.8",
     "vinyl": "^0.4.6"
