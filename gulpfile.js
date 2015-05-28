@@ -7,6 +7,7 @@ var sass  = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var htmlreplace = require('gulp-html-replace');
 var mocha = require('gulp-mocha');
  
 
@@ -57,7 +58,7 @@ gulp.task('build', function(){
     .pipe(gulp.dest(path.DEST_BUILD));
 });
 //********************************************//
-//
+// 
 //********************************************//
 gulp.task('replaceHTML', function(){
   gulp.src(path.HTML)
