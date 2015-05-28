@@ -58,7 +58,10 @@ gulp.task('build', function(){
     .pipe(gulp.dest(path.DEST_BUILD));
 });
 //********************************************//
-// 
+// uses htmlreplace
+// https://www.npmjs.com/package/gulp-html-replace
+// used to replace location of scripts based on build
+// location
 //********************************************//
 gulp.task('replaceHTML', function(){
   gulp.src(path.HTML)
@@ -69,6 +72,7 @@ gulp.task('replaceHTML', function(){
 });
 
 // ***************************** //
+// Used to catch any syntax errors
 // https://www.npmjs.com/package/gulp-jshint
 // ***************************** //
 gulp.task('lint', function() {
@@ -76,11 +80,13 @@ gulp.task('lint', function() {
     .pipe(jshint())
     // Info on reporters
     // https://www.npmjs.com/package/gulp-jshint#reporters
+    // what sort of syntax issues should be caught?
     .pipe(jshint.reporter('default'));
 });
 
 
 // ***************************** //
+// which tests should be run?
 // https://www.npmjs.com/package/gulp-mocha
 // ***************************** //
 gulp.task('mocha', function () {
@@ -90,9 +96,13 @@ gulp.task('mocha', function () {
 });
 
 //********************************************//
-//
+// 'default' specifies what tasks to run when
+// running only 'gulp' without args
 //********************************************//
 gulp.task('default', ['watch']);
 
+//********************************************//
+// tasks to run to build out production code
+//********************************************//
 gulp.task('production', ['replaceHTML', 'build']);
 
