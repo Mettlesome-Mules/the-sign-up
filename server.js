@@ -14,6 +14,10 @@ app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 
+app.get('/hello', function (req, res) {
+  res.sendfile('./src/index.html');
+});
+
 var server = app.listen(3000, function () {
 
   var host = server.address().address;
