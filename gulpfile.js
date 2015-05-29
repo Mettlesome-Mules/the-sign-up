@@ -3,6 +3,7 @@ var gulp = require('gulp');
 
 // Include Our Plugins
 var jshint = require('gulp-jshint');
+var react = require('gulp-react')
 var sass  = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
@@ -12,9 +13,13 @@ var mocha = require('gulp-mocha');
  
 
 var path = {
-  HTML: 'src/index.html',
-  ALL: ['src/js/*.js', 'src/js/**/*.js', 'src/index.html'],
-  JS: ['src/js/*.js', 'src/js/**/*.js'],
+  // Example using the src/hello_world
+  // HTML: 'src/index.html',
+  // ALL: ['src/js/*.js', 'src/js/**/*.js', 'src/index.html'],
+  // JS: ['src/js/*.js', 'src/js/**/*.js'],
+  HTML: 'client/index.html',
+  ALL: ['client/*.js', 'client/**/*.js', 'client/index.html'],
+  JS: ['client/*.js', 'client/**/*.js'],
   MINIFIED_OUT: 'build.min.js',
   DEST_SRC: 'dist/src',
   DEST_BUILD: 'dist/build',
